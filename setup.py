@@ -1,15 +1,14 @@
 
-
 from setuptools import setup
 
 
 setup(
-    name='tc-django',
+    name='django-typecode',
     version='0.0.1',
     author='Lev Kanter',
     author_email='lev@typecode.com',
 
-    url='https://github.com/typecode/tc-django',
+    url='https://github.com/typecode/django-typecode',
     keywords='django utils',
     packages=['typecode'],
     classifiers=[
