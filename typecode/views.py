@@ -1,9 +1,8 @@
 
-
 from django.core.exceptions import PermissionDenied
 
 
-class VisibilityObjectView(object):
+class VisibilityObjectMixin(object):
 
     def get(self, request, *args, **kwargs):
         if not self.get_object().can_view(request.user):
