@@ -16,10 +16,9 @@ class AdminThumbImage(AdminFileWidget):
 
     def render(self, name, value, attrs=None):
         out = []
-        v = str(value)
-        if v:
+        if value:
             thumb = value.get_thumbnail(self.thumbnail_options)
             thumb_path = settings.MEDIA_URL + str(thumb)
-            out.append(u'<img src="%s" alt="%s thumbnail">' % (thumb_path, v))
+            out.append(u'<img src="%s" alt="%s thumbnail">' % (thumb_path, str(value)))
         out.append(super(AdminThumbImage, self).render(name, value, attrs))
         return mark_safe(u''.join(out))
