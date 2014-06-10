@@ -7,13 +7,13 @@ from django.contrib.staticfiles.storage import staticfiles_storage as ss
 from typecode.utils import relative_to_fq_url
 
 
-DEFAULT_TYPE = settings.get('OPENGRAPH_DEFAULT_TYPE', 'website')
+DEFAULT_TYPE = getattr(settings, 'OPENGRAPH_DEFAULT_TYPE', 'website')
 
-DEFAULT_LOCALE = settings.get('OPENGRAPH_DEFAULT_LOCALE', 'en_US')
+DEFAULT_LOCALE = getattr(settings, 'OPENGRAPH_DEFAULT_LOCALE', 'en_US')
 
-DEFAULT_TITLE = settings.get('OPENGRAPH_DEFAULT_TITLE', Site.objects.get_current().name)
+DEFAULT_TITLE = getattr(settings, 'OPENGRAPH_DEFAULT_TITLE', Site.objects.get_current().name)
 
-DEFAULT_DESCRIPTION = settings.get('OPENGRAPH_DEFAULT_DESCRIPTION', '')
+DEFAULT_DESCRIPTION = getattr(settings, 'OPENGRAPH_DEFAULT_DESCRIPTION', '')
 
 if hasattr(settings, 'OPENGRAPH_DEFAULT_IMAGE'):
     DEFAULT_IMAGE = relative_to_fq_url(ss.url(settings.OPENGRAPH_DEFAULT_IMAGE))
