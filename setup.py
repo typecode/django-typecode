@@ -10,7 +10,10 @@ setup(
 
     url='https://github.com/typecode/django-typecode',
     keywords='django utils',
-    packages=['typecode'],
+    packages=[
+        'typecode',
+        'typecode.opengraph',
+    ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Framework :: Django',
